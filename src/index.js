@@ -10,7 +10,7 @@ bot.start((msg) => msg.reply("Привіт я можу надати актуал
 
 bot.help((msg) => msg.reply("/exch sum from to - повертае курс з валюти from y валюті to"))
 
-bot.command("exch", (msg) => {
+bot.command("exch", async (msg) => {
     const {text} = msg.message
     const [_, sum, from, to] = text.split(" ")
     const response = await fetch (`${apiUrl} v6/${process.env.apKay}/latest/${feom}`)
